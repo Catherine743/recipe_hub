@@ -1,0 +1,59 @@
+<app-header></app-header>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="container">
+                <h5>Filter</h5>
+                <button class="btn mt-5">All</button><br>
+                <!-- Cuisine Type -->
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Cuisine Type
+                </button><br>
+                <div class="collapse" id="collapseExample">
+                    <Button class="btn">Italian</Button>
+                    <Button class="btn">Asian</Button>
+                    <Button class="btn">American</Button>
+                    <Button class="btn">Mexican</Button>
+                    <Button class="btn">Indian</Button>
+                    <Button class="btn">Pakistani</Button>
+                    <Button class="btn">Japanese</Button>
+                    <Button class="btn">Thai</Button>
+                </div>
+
+                <!-- Meal Type -->
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+                    Meal Type
+                </button><br>
+                <div class="collapse" id="collapseExample1">
+                    <Button class="btn">Dinner</Button>
+                    <Button class="btn">Lunch</Button>
+                    <Button class="btn">Dessert</Button>
+                    <Button class="btn">Appetizer</Button>
+                    <Button class="btn">Breakfast</Button>
+                    <Button class="btn">Beverage</Button>
+                    <Button class="btn">Salad</Button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1>All Recipes</h1>
+                <input type="text" class="form-control w-50" placeholder="Search your recipes">
+            </div>
+            <div class="row my-3">
+                <div class="col-lg-4">
+                    <div class="p-3">
+                        <img src="https://cdn.dummyjson.com/recipe-images/1.webp" alt="" width="100%">
+                        <div class="card-body">
+                            <h4>recipe.name</h4>
+                            <p class="fw-bolder">Cuisine: <span class="text-danger">recipe.cuisine</span></p>
+                            <p class="fw-bolder">mealType: <span class="text-danger">recipe.mealType</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
