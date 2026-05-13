@@ -23,4 +23,9 @@ export class Apiservice {
   getAllRecipeAPI() {
     return this.http.get(`${this.server_url}/all-recipes`)
   }
+
+  // addTestimonyAPI
+  addTestimonyAPI(reqBody: any) {
+    return this.http.post(`${this.server_url}/testimonials/add`, reqBody)
+  }
 }

@@ -27,24 +27,25 @@
                     Meal Type
                 </button><br>
                 <div class="collapse" id="collapseExample1">
-                    <Button class="btn">Dinner</Button>
-                    <Button class="btn">Lunch</Button>
-                    <Button class="btn">Dessert</Button>
-                    <Button class="btn">Appetizer</Button>
-                    <Button class="btn">Breakfast</Button>
-                    <Button class="btn">Beverage</Button>
-                    <Button class="btn">Salad</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Dinner')">Dinner</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Lunch')">Lunch</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Dessert')">Dessert</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Appetizer')">Appetizer</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Breakfast')">Breakfast</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Beverage')">Beverage</Button>
+                    <Button class="btn" (click)="filterRecipes('mealType','Salad')">Salad</Button>
                 </div>
             </div>
         </div>
         <div class="col-lg-8">
             <div class="d-flex justify-content-between align-items-center">
                 <h1>All Recipes</h1>
-                <input type="text" class="form-control w-50" placeholder="Search your recipes">
+                <input [(ngModel)]="searchKey" type="text" class="form-control w-50" placeholder="Search your recipes">
             </div>
             <div class="row my-3">
                 @if (allRecipes.length > 0) {
-                @for (recipe of allRecipes; track $index) {
+                @for (recipe of allRecipes | search:searchKey | paginate: { itemsPerPage: 9, currentPage: p }; track
+                $index) {
                 <div class="col-lg-4">
                     <div class="p-3">
                         <img [src]=recipe.image alt="" width="100%">
@@ -62,6 +63,14 @@
                     No Recipes Found....
                 </div>
                 }
+                @if ((allRecipes | search: searchKey).length == 0) {
+                <div class="text-danger fw-bolder">
+                    No Recipes Found....
+                </div>
+                }
+                <div class="text-center">
+                  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
             </div>
         </div>
     </div>

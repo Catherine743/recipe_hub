@@ -3,10 +3,7 @@
 <div class="container-fluid px-5">
 
   <!-- Contact Hero Section -->
-  <div
-    class="row bg-success text-light text-center align-items-center rounded mt-4"
-    style="min-height: 450px;"
-  >
+  <div class="row bg-success text-light text-center align-items-center rounded mt-4" style="min-height: 450px;">
 
     <div class="col-lg-12">
 
@@ -43,10 +40,8 @@
       <!-- Address -->
       <div class="d-flex mt-5">
 
-        <div
-          class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-geo-alt-fill fs-4"></i>
         </div>
 
@@ -67,10 +62,8 @@
       <!-- Phone -->
       <div class="d-flex mt-4">
 
-        <div
-          class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-telephone-fill fs-4"></i>
         </div>
 
@@ -91,10 +84,8 @@
       <!-- Email -->
       <div class="d-flex mt-4">
 
-        <div
-          class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success text-light rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-envelope-fill fs-4"></i>
         </div>
 
@@ -121,31 +112,23 @@
 
       <div class="d-flex mt-4 gap-3">
 
-        <div
-          class="bg-success rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-facebook text-light fs-4"></i>
         </div>
 
-        <div
-          class="bg-success rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-instagram text-light fs-4"></i>
         </div>
 
-        <div
-          class="bg-success rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-twitter text-light fs-4"></i>
         </div>
 
-        <div
-          class="bg-success rounded-circle d-flex justify-content-center align-items-center"
-          style="width: 60px; height: 60px;"
-        >
+        <div class="bg-success rounded-circle d-flex justify-content-center align-items-center"
+          style="width: 60px; height: 60px;">
           <i class="bi bi-youtube text-light fs-4"></i>
         </div>
 
@@ -156,32 +139,21 @@
     <!-- Right Side Form -->
     <div class="col-lg-6 mt-5 mt-lg-0">
 
-      <div class="card border-0 shadow-lg p-5 rounded">
+      <form [formGroup]="testimonyForm" (ngSubmit)="addTestimony()" class="card border-0 shadow-lg p-5 rounded">
+
 
         <h1 class="fw-light mb-5">
           Client Testimony
         </h1>
 
         <!-- Name -->
-        <input
-          type="text"
-          class="form-control form-control-lg mb-4"
-          placeholder="Name"
-        />
+        <input type="text" name="name" formControlName="name" class="form-control form-control-lg mb-4" placeholder="Name" />
 
         <!-- Email -->
-        <input
-          type="email"
-          class="form-control form-control-lg mb-4"
-          placeholder="E Mail"
-        />
+        <input type="email" name="email" formControlName="email" class="form-control form-control-lg mb-4" placeholder="E Mail" />
 
         <!-- Message -->
-        <textarea
-          rows="4"
-          class="form-control form-control-lg"
-          placeholder="Message"
-        ></textarea>
+        <textarea rows="4" name="message" formControlName="message" class="form-control form-control-lg" placeholder="Message"></textarea>
 
         <p class="text-muted fs-5 mt-4">
           By Submitting, your agreeing the terms and condition
@@ -196,7 +168,7 @@
 
         </div>
 
-      </div>
+      </form>
 
     </div>
 
@@ -207,21 +179,13 @@
 
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.106585561235!2d76.34881357479567!3d10.023844690082564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c3d0e7f2c0f%3A0xf0b4b5f9d82fce0c!2sLuminar%20Technolab!5e0!3m2!1sen!2sin!4v1715154429394!5m2!1sen!2sin"
-      width="100%"
-      height="500"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      class="rounded shadow"
-    ></iframe>
+      width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade" class="rounded shadow"></iframe>
 
   </div>
 
   <!-- Footer Banner -->
-  <div
-    class="row bg-success text-light align-items-center rounded p-5 my-5"
-  >
+  <div class="row bg-success text-light align-items-center rounded p-5 my-5">
 
     <!-- Left -->
     <div class="col-lg-6">
@@ -242,11 +206,7 @@
 
       <div class="d-flex mt-4 justify-content-lg-end">
 
-        <input
-          type="email"
-          class="form-control w-50"
-          placeholder="Enter your email"
-        />
+        <input type="email" class="form-control w-50" placeholder="Enter your email" />
 
         <button class="btn btn-warning ms-3 text-light fw-bold">
           Subscribe
