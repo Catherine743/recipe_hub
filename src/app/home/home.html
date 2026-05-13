@@ -26,13 +26,17 @@
             <a routerLink="/recipe">View All</a>
         </div>
         <div class="row my-3">
+            @for (recipe of allRecipes; track $index) {
             <div class="col-lg-4 d-flex">
                 <div class="p-3">
-                    <img src="https://cdn.dummyjson.com/recipe-images/1.webp" alt="recipe.image" width="70%">
+                    <img [src]=recipe.image alt="recipe.image" width="70%">
                     <div class="card-body">
-                        <h4>Name</h4>
+                        <h4>{{recipe.name}}</h4>
                     </div>
                 </div>
+            </div>
+            }
+            <div class="col-lg-8">
             </div>
         </div>
     </div>

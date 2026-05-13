@@ -4,21 +4,21 @@
         <div class="col-lg-4">
             <div class="container">
                 <h5>Filter</h5>
-                <button class="btn mt-5">All</button><br>
+                <button class="btn mt-5" (click)="getAllRecipes()">All</button><br>
                 <!-- Cuisine Type -->
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="collapse"
                     data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                     Cuisine Type
                 </button><br>
                 <div class="collapse" id="collapseExample">
-                    <Button class="btn">Italian</Button>
-                    <Button class="btn">Asian</Button>
-                    <Button class="btn">American</Button>
-                    <Button class="btn">Mexican</Button>
-                    <Button class="btn">Indian</Button>
-                    <Button class="btn">Pakistani</Button>
-                    <Button class="btn">Japanese</Button>
-                    <Button class="btn">Thai</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Italian')">Italian</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Asian')">Asian</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','American')">American</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Mexican')">Mexican</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Indian')">Indian</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Pakistani')">Pakistani</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Japanese')">Japanese</Button>
+                    <Button class="btn" (click)="filterRecipes('cuisine','Thai')">Thai</Button>
                 </div>
 
                 <!-- Meal Type -->
@@ -43,16 +43,25 @@
                 <input type="text" class="form-control w-50" placeholder="Search your recipes">
             </div>
             <div class="row my-3">
+                @if (allRecipes.length > 0) {
+                @for (recipe of allRecipes; track $index) {
                 <div class="col-lg-4">
                     <div class="p-3">
-                        <img src="https://cdn.dummyjson.com/recipe-images/1.webp" alt="" width="100%">
+                        <img [src]=recipe.image alt="" width="100%">
                         <div class="card-body">
-                            <h4>recipe.name</h4>
-                            <p class="fw-bolder">Cuisine: <span class="text-danger">recipe.cuisine</span></p>
-                            <p class="fw-bolder">mealType: <span class="text-danger">recipe.mealType</span></p>
+                            <h4>{{recipe.name}}</h4>
+                            <p class="fw-bolder">Cuisine: <span class="text-danger">{{recipe.cuisine}}</span></p>
+                            <p class="fw-bolder">mealType: <span class="text-danger">{{recipe.mealType}}</span></p>
                         </div>
                     </div>
                 </div>
+                }
+                }
+                @else {
+                <div class="text-danger fw-bolder">
+                    No Recipes Found....
+                </div>
+                }
             </div>
         </div>
     </div>
