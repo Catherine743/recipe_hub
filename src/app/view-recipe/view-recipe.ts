@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Header } from '../header/header';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { Apiservice } from '../services/apiservice';
 
 @Component({
   selector: 'app-view-recipe',
@@ -10,4 +11,36 @@ import { RouterLink } from '@angular/router';
 })
 export class ViewRecipe {
 
+  recipeId: string = ""
+  recipe: any = {}
+  allRelatedRecipes: any = []
+
+  constructor(private route: ActivatedRoute, private api: Apiservice) { }
+
+  ngOnInit() {
+    this.route.params.subscribe((res: any) => {
+      console.log(res);
+      this.recipeId = res.id
+      this.getRecipeDetails(this.recipeId)
+    })
+  }
+
+  getRecipeDetails(recipeId: string) {
+    this.api.viewRecipeAPI(recipeId).subscribe((res: any) => {
+      this.recipe = res
+      console.log(this.recipe);
+      this.getRelatedRecipe(res.cuisine)
+    })
+  }
+
+  getRelatedRecipe(cuisine: string) {
+    this.api.relatedRecipeAPI(cuisine).subscribe((res: any) => {
+      if (res.length > 1) {
+        this.allRelatedRecipes = res.filter((item: any) => item.name != this.recipe.name)
+      }
+      else {
+        this.allRelatedRecipes = []
+      }
+    })
+  }
 }

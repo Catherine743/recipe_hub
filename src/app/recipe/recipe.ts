@@ -37,5 +37,12 @@ export class Recipe {
     this.allRecipes = this.allRecipesDummy.filter((item: any) => item[key].includes(value))
   }
 
-
+  viewRecipe(recipeId: string) {
+    if (sessionStorage.getItem('token')) {
+      this.router.navigateByUrl(`view-recipe/${recipeId}`)
+    }
+    else {
+      alert("Please login to explore our recipes")
+    }
+  }
 }

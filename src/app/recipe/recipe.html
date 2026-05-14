@@ -48,7 +48,7 @@
                 $index) {
                 <div class="col-lg-4">
                     <div class="p-3">
-                        <img [src]=recipe.image alt="" width="100%">
+                        <img [src]=recipe.image (click)="viewRecipe(recipe._id)" alt="" width="100%">
                         <div class="card-body">
                             <h4>{{recipe.name}}</h4>
                             <p class="fw-bolder">Cuisine: <span class="text-danger">{{recipe.cuisine}}</span></p>
