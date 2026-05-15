@@ -43,4 +43,15 @@ export class ViewRecipe {
       }
     })
   }
+
+  saveRecipe() {
+    this.api.saveRecipeAPI(this.recipeId, this.recipe).subscribe({
+      next: (res: any) => {
+        alert("Recipe added to saved collection")
+      },
+      error: (reason: any) => {
+        alert(reason.error)
+      }
+    })
+  }
 }

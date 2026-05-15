@@ -6,7 +6,7 @@
             <a routerLink="/recipe">Back To Recipe</a>
             <img [src]="recipe.image" alt="no image" class="img-fluid my-5">
             <div class="d-flex justify-content-between">
-                <button class="btn btn-primary">Saved-Recipes</button>
+                <button (click)="saveRecipe()" class="btn btn-primary">Saved-Recipes</button>
                 <button class="btn btn-success">Download-Recipes</button>
             </div>
         </div>
